@@ -7,17 +7,16 @@ public class TryCatchclass {
     
       try {
              
-      int dividendo, divisor;
-      System.out.println("Digite um valor para dividir : ");
+      int dividendo;
+      int divisor;
+      
+      System.out.println ("             DIVISÃO              ");
+        
+      System.out.println (" Por favor, insira um dividendo : ");
       dividendo = t.nextInt();
-      System.out.println("Digite outro valor para dividir : ");
+      System.out.println (" Por favor, insira um divisor   : ");
       divisor = t.nextInt();
 
-      if(divisor == 0) {
-          
-        throw new Exception("Nao eh permitido fazer uma divisao por zero!");
-        
-      }
 
       System.out.println(dividendo+" / "+divisor+" = "+(dividendo / divisor));
       
@@ -32,3 +31,4 @@ public class TryCatchclass {
     }
   }
 }
+  
