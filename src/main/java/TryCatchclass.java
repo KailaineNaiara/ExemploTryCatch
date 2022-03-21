@@ -1,32 +1,34 @@
-
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.util.Scanner;
 
 public class TryCatchclass {
     public static void main ( String args []){
-    int[] valor = {5, 23, 76, 3};     
-    
-    System.out.println(valor[4]); 
-
-    System.exit(0);
         
-        try {
-            
-      DataInputStream in = new DataInputStream(new BufferedInputStream(
-        new FileInputStream("C:\\java\\conteudo.txt")));
-         
-      while (in.available() != 0){
-        System.out.print((char) in.readByte());
-      }
-    } 
-    catch (IOException e){
-      System.out.println("Erro: " + e.getMessage());
-    }
- 
-    System.exit(0);
- 
-  }
+    Scanner t = new Scanner(System.in);
+    
+      try {
+             
+      int dividendo, divisor;
+      System.out.println("Digite um valor para dividir : ");
+      dividendo = t.nextInt();
+      System.out.println("Digite outro valor para dividir : ");
+      divisor = t.nextInt();
 
+      if(divisor == 0) {
+          
+        throw new Exception("Nao eh permitido fazer uma divisao por zero!");
+        
+      }
+
+      System.out.println(dividendo+" / "+divisor+" = "+(dividendo / divisor));
+      
+    } catch (Exception ex) {
+        
+      System.out.println("Erro: " + ex.getMessage()); 
+      
+    } finally {
+          
+      System.out.println("Finally");
+      
+    }
+  }
 }
